@@ -10,4 +10,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run a BUILD.
-      run: docker build -t abrakadabra21099/spice-console .
+      run: docker build -t abrakadabra21099/spice-console -t abrakadabra21099/spice-console:0 -t abrakadabra21099/spice-console:0.1 .
+    - name: Push into docker hub
+      run: |
+        docker push abrakadabra21099/spice-console
+        docker push abrakadabra21099/spice-console:0
+        docker push abrakadabra21099/spice-console:0.1
