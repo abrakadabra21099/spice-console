@@ -8,4 +8,4 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
   task-cyrillic-kde-desktop task-ssh-server && \
   rm -rf /var/lib/apt/lists/*
 ENTRYPOINT ["/bin/bash"]
-EXPOSE 22/tcp,5900/tcp
+EXPOSE 22/tcp 5900/tcp
