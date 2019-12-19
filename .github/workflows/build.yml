@@ -11,14 +11,13 @@ jobs:
     - uses: actions/checkout@v1
     - name: Update & install dependensies packeges
       run: |
-        sudo apt -q=2 update && apt install --assume-yes apt-transport-https ca-certificates \
+        sudo apt-get update && sudo apt-get install --assume-yes apt-transport-https ca-certificates \
         curl software-properties-common
     - name: Add Docker’s official GPG key
       run: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     - name: Install docker-ce
       run: |
         sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && \
-        sudo apt -q=2 update && apt install --assume-yes docker-ce docker-ce-cli containerd.io
+        sudo apt-get update && sudo apt-get install --assume-yes docker-ce docker-ce-cli containerd.io
     - name: Run a BUILD.
-      run: |
-        docker build .
+      run: sudo docker build .
