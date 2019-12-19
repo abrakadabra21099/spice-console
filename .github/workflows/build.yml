@@ -10,4 +10,4 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run a BUILD.
-      run: sudo docker build .
+      run: docker build -t abrakadabra21099/spice-console .
