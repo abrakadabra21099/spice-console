@@ -1,7 +1,7 @@
 version: "3"
 services:
   terminal:
-    image: debian:10
+    image: abrakadabra21099/spice-console
     build: terminal
     ports:
       - "5900:5900/tcp"
