@@ -1,0 +1,21 @@
+version: "3"
+services:
+  terminal:
+    image: debian:10
+    build: terminal
+    ports:
+      - "5900:5900/tcp"
+      - "2242:22/tcp"
+    volumes:
+      - "/srv/terminal/data/home:/home"
+    depends_on:
+#      - jenkins
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+#  jenkins:
+#    image: jenkins:latest
+#    volumes:
+#      - "/srv/terminal/data/jenkins:/var/jenkins_home"
+      
